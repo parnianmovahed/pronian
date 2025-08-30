@@ -15,8 +15,9 @@ body {
 }
 
 .main-layout {
-  display: grid;
-  row-gap: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 a {
@@ -122,39 +123,35 @@ a {
 /* SWIPER */
 
 .swiper-subject {
-  margin: 40px;
+  margin: 0 40px;
   font-size: var(--text-4xl);
+  margin-bottom: 10px;
 }
 .swiper-container {
-  position: relative;
-  align-items: center;
-  padding: 0px 24px;
-  overflow-x: auto;
-}
-.swiper-box {
   display: flex;
-  width: 100%;
-  gap: 20px;
+  gap: 10px;
+  width: 100%-40px;
+  padding: 0px 40px;
   overflow-x: scroll;
 }
-
-.swiper-box > a {
+.swiper-container > a {
   display: flex;
   flex-direction: column;
-  width: 160px;
-  height: 300px;
   text-align: center;
   border-radius: var(--radius-lg);
   background-color: var(--primary-50);
   cursor: pointer;
 }
+.swiper-container > a > img {
+  width: 300px;
+}
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-.swiper-box::-webkit-scrollbar {
+.swiper-container::-webkit-scrollbar {
     display: none;
 }
 /* Hide scrollbar for IE, Edge and Firefox */
-.swiper-box {
+.swiper-container {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
@@ -163,6 +160,10 @@ a {
 .swiper-subject {
   margin: 20px;
   font-size: var(--text-3xl);
+}
+.swiper-container {
+  width: 100%-20px;
+  padding: 0px 20px;
 }
 }
 
@@ -182,6 +183,7 @@ a {
   text-align: center;
   border-radius: var(--radius-lg);
   background-color: var(--primary-50);
+  cursor: pointer;
 }
 
 @media screen and (max-width: 800px) {
@@ -189,14 +191,14 @@ a {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  padding: 10px;
+  padding: 20px;
 }
 }
 
 /* TEXT SLIDER */
 
 .text-slider {
-  color: var(--primary-100);
+  color: var(--primary-50);
   font-family: RougeScript;
   font-size: var(--text-6xl);
   white-space: nowrap; 

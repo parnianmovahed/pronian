@@ -25,6 +25,12 @@ a {
   color: inherit;
 }
 
+.sign {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
 /* NAVBAR */
 
 .topnav {
@@ -75,6 +81,9 @@ a {
     float: none;
     display: block;
     text-align: left;
+  }
+  .sign{
+    display: none;
   }
 }
 

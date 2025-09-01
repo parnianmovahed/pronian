@@ -207,7 +207,7 @@ a {
 /* TEXT SLIDER */
 
 .text-slider {
-  color: var(--primary-50);
+  color: var(--primary-100);
   font-family: RougeScript;
   font-size: var(--text-6xl);
   white-space: nowrap; 

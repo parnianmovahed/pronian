@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rug Color Palette</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body class="centerize">
+    <div class="palette-container">
+      <h3>Rug Color Palette</h3>
+      <div class="palette-rows">
+        <div>
+          <h5>Primary</h5>
+          <div class="color-row">
+            <div
+              style="background-color: #f9eae7"
+              onclick="copyColor('#f9eae7')"
+            >
+              100
+            </div>
+            <div
+              style="background-color: #e4a295;color: white"
+              onclick="copyColor('#e4a295')"
+            >
+              200
+            </div>
+            <div
+              style="background-color: #D05941;color: white;"
+              onclick="copyColor('#D05941')"
+            >
+              300
+            </div>
+            <div
+              style="background-color: #a33d29;color: white;"
+              onclick="copyColor('#a33d29')"
+            >
+              400
+            </div>
+            <div
+              style="background-color: #7a2e1f;color: white;"
+              onclick="copyColor('#7a2e1f')"
+            >
+              500
+            </div>
+          </div>
+        </div>
+        <div>
+          <h5>Secondary</h5>
+          <div class="color-row">
+            <div
+              style="background-color: #f3e7ce"
+              onclick="copyColor('#f9f3e7')"
+            >
+              100
+            </div>
+            <div
+              style="background-color: #e4ca95;color: white"
+              onclick="copyColor('#e4ca95')"
+            >
+              200
+            </div>
+            <div
+              style="background-color: #D0A041;color: white;"
+              onclick="copyColor('#D0A041')"
+            >
+              300
+            </div>
+            <div
+              style="background-color: #a37a29;color: white;"
+              onclick="copyColor('#a37a29')"
+            >
+              400
+            </div>
+            <div
+              style="background-color: #7a5c1f;color: white;"
+              onclick="copyColor('#7a5c1f')"
+            >
+              500
+            </div>
+          </div>
+        </div>
+        <div>
+          <h5>Surface</h5>
+          <div class="color-row">
+            <div
+              style="background-color: #f5f5f5"
+              onclick="copyColor('#f5f5f5')"
+            >
+              100
+            </div>
+            <div
+              style="background-color: #e6e6e6"
+              onclick="copyColor('#e6e6e6')"
+            >
+              200
+            </div>
+            <div
+              style="background-color: #999999;color: white;"
+              onclick="copyColor('#999999')"
+            >
+              300
+            </div>
+            <div
+              style="background-color: #666666;color: white;"
+              onclick="copyColor('#666666')"
+            >
+              400
+            </div>
+            <div
+              style="background-color: #333333;color: white;"
+              onclick="copyColor('#333333')"
+            >
+              500
+            </div>
+          </div>
+        </div>
+        <div>
+          <h5>Info</h5>
+          <div class="color-row">
+            <div
+              style="background-color: #ebebff"
+              onclick="copyColor('#ebebff')"
+            >
+              200
+            </div>
+            <div
+              style="background-color: #6969fc;color: white;"
+              onclick="copyColor('#6969FC')"
+            >
+              300
+            </div>
+            <div
+              style="background-color: #030396;color: white;"
+              onclick="copyColor('#030396')"
+            >
+              400
+            </div>
+          </div>
+        </div>
+        <div>
+          <h5>Success</h5>
+          <div class="color-row">
+            <div
+              style="background-color: #ecfdef"
+              onclick="copyColor('#ecfdef')"
+            >
+              200
+            </div>
+            <div
+              style="background-color: #1DEA42;color: white;"
+              onclick="copyColor('#1DEA42')"
+            >
+              300
+            </div>
+            <div
+              style="background-color: #0f8a26;color: white;"
+              onclick="copyColor('#0f8a26')"
+            >
+              400
+            </div>
+          </div>
+        </div>
+        <div>
+          <h5>Warning</h5>
+          <div class="color-row">
+            <div
+              style="background-color: #fef1cd"
+              onclick="copyColor('#fef1cd')"
+            >
+              200
+            </div>
+            <div
+              style="background-color: #FABE17;color: white;"
+              onclick="copyColor('#FABE17')"
+            >
+              300
+            </div>
+            <div
+              style="background-color: #644a02;color: white;"
+              onclick="copyColor('#644a02')"
+            >
+              400
+            </div>
+          </div>
+        </div>
+        <div>
+          <h5>Danger</h5>
+          <div class="color-row">
+            <div
+              style="background-color: #fee6e1"
+              onclick="copyColor('#fee6e1')"
+            >
+              200
+            </div>
+            <div
+              style="background-color: #FA3D17;color: white;"
+              onclick="copyColor('#FA3D17')"
+            >
+              300
+            </div>
+            <div
+              style="background-color: #961c03;color: white;"
+              onclick="copyColor('#961c03')"
+            >
+              400
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function copyColor(hexCode) {
+      // Create a temporary textarea element to hold the text to copy
+      const textarea = document.createElement("textarea");
+      textarea.value = hexCode;
+      document.body.appendChild(textarea);
+
+      // Select and copy the text
+      textarea.select();
+      document.execCommand("copy");
+
+      // Remove the temporary element
+      document.body.removeChild(textarea);
+
+      // Show notification
+      const notification = document.getElementById("notification");
+      notification.textContent = `Copied: ${hexCode}`;
+      notification.classList.add("show");
+
+      // Hide notification after 2 seconds
+      setTimeout(() => {
+        notification.classList.remove("show");
+      }, 2000);
+    }
+  </script>
+</html>

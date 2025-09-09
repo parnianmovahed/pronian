@@ -20,6 +20,10 @@ body {
   gap: 32px;
 }
 
+.flex {
+  display: flex;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -29,6 +33,36 @@ a {
   position: absolute;
   right: 30px;
   top: 30px;
+}
+
+.centerize {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  gap: 100px;
+  margin: 24px;
+}
+.pngs {
+ display: flex;
+ flex-direction: column;
+}
+
+.pngs > img {
+  width: 280px;
+  border-radius: 40px;
+}
+
+@media screen and (max-width: 800px) {
+  .centerize {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 100px;
+  }
+  .width300 > img {
+    width: 100%;
+  }
 }
 
 /* NAVBAR */
@@ -137,7 +171,7 @@ a {
 .swiper-subject {
   margin: 0 40px;
   font-size: var(--text-4xl);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .swiper-container {
   display: flex;
@@ -221,6 +255,7 @@ a {
   width: 100%;
   overflow: hidden;
   text-overflow: clip;
+  margin: 72px 0;
 }
 
 /* FOOTER */
@@ -273,12 +308,6 @@ a {
 }
 
 /* COLOR PALETTE */
-.centerize {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 .palette-container {
   display: flex;
@@ -290,7 +319,6 @@ a {
   border-radius: var(--radius-lg);
   box-shadow: var(--grey-shadow);
   max-width: 60%;
-  margin: 24px 0;
 }
 
 .palette-rows {

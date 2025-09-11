@@ -361,6 +361,48 @@ a {
   }
 }
 
+/* TOOLTIP */
+.tooltip {
+  position: relative; }
+  .tooltip:after, .tooltip:before {
+    opacity: 0;
+    pointer-events: none;
+    bottom: 100%;
+    left: 50%;
+    position: absolute;
+    z-index: 10;
+    transform: translate(-50%, 10px);
+    transform-origin: top;
+    transition: all 0.18s ease-out 0.18s; }
+
+.tooltip:after {
+  background-color: var(--surface-300);
+  color: white;
+  border-radius: 10px;
+  content: attr(data-tooltip);
+  padding: 10px;
+  white-space: nowrap;
+  margin-bottom: 11px; }
+
+.tooltip:before {
+  width: 0;
+  height: 0;
+  content: "";
+  margin-bottom: 6px; }
+
+.tooltip:hover:before,
+.tooltip:hover:after {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0); }
+
+[data-tooltip-pos="up"]:before {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #f5f5f5;
+  margin-bottom: 6px; }
+
+
 :root {
   /* Color */
   --primary-50: hsl(200, 24%, 93%);
